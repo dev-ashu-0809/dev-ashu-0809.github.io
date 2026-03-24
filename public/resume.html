@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Ashutosh Singh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+      font-size: 13px;
+      line-height: 1.5;
+      background: #fff;
+    }
+
+    .page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 50px;
+    }
+
+    @media print {
+      body { font-size: 11.5px; }
+      .page { padding: 20px 30px; }
+      .no-print { display: none; }
+      @page { margin: 0.4in; }
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 3px solid #2563eb;
+      margin-bottom: 18px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .header .title {
+      font-size: 14px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .header .contact {
+      text-align: right;
+      font-size: 12px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    .header .contact a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* Section */
+    .section { margin-bottom: 16px; }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .summary {
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    /* Skills table */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skills-table td {
+      padding: 4px 8px;
+      vertical-align: top;
+      border: 1px solid #e5e7eb;
+    }
+
+    .skills-table td:first-child {
+      font-weight: 600;
+      color: #374151;
+      width: 180px;
+      background: #f9fafb;
+    }
+
+    .skills-table td:last-child {
+      color: #4b5563;
+    }
+
+    /* Experience */
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .company-name {
+      font-weight: 700;
+      font-size: 14px;
+      font-style: italic;
+      color: #111827;
+    }
+
+    .company-role {
+      font-weight: 600;
+      color: #2563eb;
+      font-size: 12.5px;
+    }
+
+    .duration {
+      font-weight: 600;
+      font-style: italic;
+      color: #374151;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .company-desc {
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* Project */
+    .project {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-header td:first-child {
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      padding: 2px 8px;
+      font-size: 11px;
+    }
+
+    .project-name {
+      font-weight: 700;
+      color: #111827;
+      font-size: 13px;
+    }
+
+    .project-summary {
+      color: #4b5563;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .project-tech {
+      font-size: 12px;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .project-tech strong {
+      color: #111827;
+    }
+
+    .resp-list {
+      padding-left: 16px;
+      color: #4b5563;
+    }
+
+    .resp-list li {
+      margin-bottom: 2px;
+    }
+
+    /* Education & Certs */
+    .edu-item {
+      margin-bottom: 4px;
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 24px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .print-btn:hover { background: #1d4ed8; }
+
+    .exp-block { margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Save as PDF</button>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>Ashutosh Singh</h1>
+      <div class="title">Technical Lead | AWS Certified Solutions Architect</div>
+    </div>
+    <div class="contact">
+      <div>Phone: +1 (913)-263-6430 / +91-9206683401</div>
+      <div>Email: <a href="mailto:ashutosh_rajput@outlook.com">ashutosh_rajput@outlook.com</a></div>
+      <div>LinkedIn: <a href="https://www.linkedin.com/in/dev-ashu/">linkedin.com/in/dev-ashu</a></div>
+      <div>Blog: <a href="https://www.c-sharpcorner.com/members/ashutosh-singh83">c-sharpcorner.com/ashutosh-singh83</a></div>
+      <div>Location: Overland Park, Kansas, US</div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section">
+    <div class="section-title">Summary</div>
+    <div class="summary">
+      Technical Lead with 10+ years of professional experience in .NET technologies, cloud platforms, and infrastructure automation.
+      Working experience in full-stack development with .NET Core, Angular, and microservices architecture.
+      AWS Certified Solutions Architect &ndash; Associate with hands-on experience in AWS and GCP cloud environments.
+      Experienced in using Terraform to build and manage scalable, secure cloud infrastructure following cell architecture patterns.
+      Skilled in leveraging Agentic AI tools (Claude Code, GitHub Copilot Premium, ChatGPT) to accelerate development workflows.
+      Experienced in guiding teams through Agile/Scrum development cycles.
+      Domain experience in Healthcare, Finance, and Enterprise Solutions.
+    </div>
+  </div>
+
+  <!-- Healthcare Skills -->
+  <div class="section">
+    <div class="section-title">Healthcare Skills</div>
+    <table class="skills-table">
+      <tr><td>Healthcare Standards</td><td>HL7 V2.X and HL7 CDA</td></tr>
+      <tr><td>Healthcare Workflows</td><td>Provider Workflows, Physician/Provider/Medical Imaging Workflows, EHR Integration</td></tr>
+    </table>
+  </div>
+
+  <!-- Technical Skills -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <table class="skills-table">
+      <tr><td>Microsoft Technologies</td><td>ASP.NET, .NET Core, MVC 5, Web API, Microservices, SignalR, C#, PowerShell, TypeScript, Entity Framework, ETL Packages</td></tr>
+      <tr><td>Frontend</td><td>Angular, JavaScript, TypeScript, jQuery, HTML5, CSS3, Bootstrap, AJAX, XML (Schemas, XSLT)</td></tr>
+      <tr><td>Cloud & Infrastructure</td><td>AWS, GCP, Terraform, Docker, ECS Fargate, Cloud SQL, Pub/Sub, Kafka, IAM, Workload Identity, Secret Manager, BigQuery, Datastream, S3, CloudWatch, CloudFront</td></tr>
+      <tr><td>Database</td><td>SQL Server, PostgreSQL, DynamoDB, Redis, Oracle</td></tr>
+      <tr><td>AI & Automation</td><td>Claude Code Agents, GitHub Copilot Premium, ChatGPT, Agentic AI Workflows, UiPath, Alteryx Designer, OCR</td></tr>
+      <tr><td>Tools & Testing</td><td>Git, Bitbucket, Jira, Azure Boards, Visual Studio, SonarQube, Playwright, Postman, Swagger, New Relic</td></tr>
+      <tr><td>Servers</td><td>IIS, ECS Container, GKE</td></tr>
+    </table>
+  </div>
+
+  <!-- Professional Experience -->
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <!-- CitiusTech -->
+    <div class="exp-block">
+      <div class="company-header">
+        <span class="company-name">CitiusTech Healthcare Technologies Private Limited</span>
+        <span class="duration">Duration: Apr 2022 &ndash; Till Now</span>
+      </div>
+      <div class="company-role">Technical Lead</div>
+      <div class="company-desc">
+        Leading IT consulting and development services provider in the healthcare technology space, working with several leading global companies to improve healthcare through innovative use of the latest software technologies.
+      </div>
+
+      <!-- HHH.Financials -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">HHH.Financials</span>
+          <span class="duration">Jul 2025 &ndash; Till Now</span>
+        </div>
+        <div class="project-summary">Healthcare financial tool supporting claims processing with AI-assisted features for clinics and hospitals to streamline EHR data entry.</div>
+        <div class="project-tech"><strong>Technologies:</strong> ASP.Net Core, Angular, PostgreSQL, Redis, Terraform, Kafka, Pub/Sub, GCP, Playwright, Flux</div>
+        <ul class="resp-list">
+          <li>Maintain cell architecture infrastructure with Terraform managing 20+ microservice modules across multi-environment deployments (dev, staging, prod, prod-training) on GCP</li>
+          <li>Provision and manage Cloud SQL, Pub/Sub, IAM, Workload Identity, Okta, Secret Manager, Kafka, BigQuery, and Datastream</li>
+          <li>Set up New Relic monitoring and observability pipelines for all services</li>
+          <li>Created NuGet package for dual authentication (Custom / Okta)</li>
+          <li>Implemented security by creating proper IAM policies, roles, and Workload Identity federation</li>
+          <li>Designed and obtained client sign-off for workflow diagrams and sequence diagrams</li>
+          <li>Automated backend testing with Flux and frontend Angular testing with Playwright</li>
+        </ul>
+      </div>
+
+      <!-- STT -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">Speech-To-Text (STT)</span>
+          <span class="duration">Jan 2023 &ndash; Jan 2025</span>
+        </div>
+        <div class="project-summary">Real-time speech-to-text server communicating over WebSocket using SignalR, enabling audio data transcription with GCP STT service integration.</div>
+        <div class="project-tech"><strong>Technologies:</strong> ASP.NET, C#, .NET 6, Angular, AWS (DynamoDB, CloudWatch, Secret Manager, ECS, ECR), SQL Server, Git</div>
+        <ul class="resp-list">
+          <li>Understood client requirements for GCP Speech-to-Text V1 and V2 beta service</li>
+          <li>Developed the HLD document, Architecture Diagram and Class Diagram</li>
+          <li>Integrated SignalR and implemented GCP STT service with STT project</li>
+          <li>Developed Terraform Script to create ECS Fargate Container</li>
+          <li>Integrated SonarQube for quality check report</li>
+        </ul>
+      </div>
+
+      <!-- NXG -->
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">NXG Mobile D2D &amp; Virtual Assistant</span>
+          <span class="duration">Jun 2022 &ndash; Jan 2023</span>
+        </div>
+        <div class="project-summary">Mobile App to Desktop connectivity for streaming text and enabling point-and-click capability. Handles 42+ Windows shortcut commands via voice control in EHR applications.</div>
+        <div class="project-tech"><strong>Technologies:</strong> C#, .NET Framework 4.6, SignalR Client, Windows Form, WPF, PowerShell, Wix-2023 (.MSI), AWS S3, CloudFront, Git</div>
+        <ul class="resp-list">
+          <li>Understood client requirements for allowed editors for point-and-click functionality</li>
+          <li>Implemented 42+ voice command actions working across all allowed editors</li>
+          <li>Developed the HLD document, Architecture Diagram and Class Diagram</li>
+          <li>Designed and coded the complete application</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Wipro -->
+    <div class="exp-block">
+      <div class="company-header">
+        <span class="company-name">Wipro Limited</span>
+        <span class="duration">Duration: May 2020 &ndash; Apr 2022</span>
+      </div>
+      <div class="company-role">Developer Analyst-I</div>
+      <div class="company-desc">Indian multinational corporation providing information technology, consulting and business process services.</div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">Boeing LTC Letter OCR</span>
+          <span class="duration">Feb 2021 &ndash; Dec 2021</span>
+        </div>
+        <div class="project-summary">Developed a bot to extract data from PDF and image files using OCR technology. Extracted data is validated via ML-based API rules, then generates CSV reports for the ML system.</div>
+        <div class="project-tech"><strong>Technologies:</strong> ASP.NET, UiPath, OCR, Alteryx Designer, APIs, Excel</div>
+        <ul class="resp-list">
+          <li>Understood and analyzed the project requirements</li>
+          <li>Designed and obtained client sign-off for the SDD (System Design Document)</li>
+          <li>Created the bot flow diagram and utilized Jira to create stories and tasks for the team</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Datamatics -->
+    <div class="exp-block">
+      <div class="company-header">
+        <span class="company-name">Datamatics Global Services Limited</span>
+        <span class="duration">Duration: May 2018 &ndash; May 2020</span>
+      </div>
+      <div class="company-role">Senior Software Engineer</div>
+      <div class="company-desc">Worked at client location (HDFC ERGO General Insurance) developing robust, scalable solutions using ASP.NET MVC 5, Entity Framework 6, and SQL Server.</div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-name">HDFC Ergo DIA Chat Bot</span>
+          <span class="duration">May 2018 &ndash; Jan 2019</span>
+        </div>
+        <div class="project-summary">Amazon chatbot integrated with ASP.NET MVC application enabling users to access policy details, submit claims, check quotations, and purchase policies through chat interactions.</div>
+        <div class="project-tech"><strong>Technologies:</strong> ASP.NET MVC 5, HTML5, CSS, Bootstrap, jQuery, SQL Server 2015</div>
+        <ul class="resp-list">
+          <li>Developed and maintained the integration between HDFC Ergo DIA Chat Bot and ASP.NET MVC application</li>
+          <li>Implemented features for chat-based policy quotation generation and purchase</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Webstream -->
+    <div class="exp-block">
+      <div class="company-header">
+        <span class="company-name">Webstream Communications Group</span>
+        <span class="duration">Duration: Apr 2017 &ndash; May 2018</span>
+      </div>
+      <div class="company-role">ASP.NET Software Developer</div>
+      <div class="company-desc">Live streaming platform specializing in Physical, Hybrid &amp; Virtual Event Management Services, including Live Webcasting and Videoconferencing across Healthcare to Manufacturing sectors.</div>
+      <ul class="resp-list" style="margin-top:4px">
+        <li>Ensured seamless synchronization between live video and audio streams</li>
+        <li>Implemented live polls and Q&amp;A sessions during live events, enhancing audience engagement</li>
+      </ul>
+    </div>
+
+    <!-- sCoolMeal -->
+    <div class="exp-block">
+      <div class="company-header">
+        <span class="company-name">sCoolMeal FoodVentures Pvt Ltd</span>
+        <span class="duration">Duration: Dec 2015 &ndash; Mar 2017</span>
+      </div>
+      <div class="company-role">Software Engineer</div>
+      <div class="company-desc">Built scalable web applications using ASP.NET MVC 5, Entity Framework 6, HTML5, jQuery, and SQL Server. Requirements gathering, HLD/LLD design, and cross-functional team collaboration.</div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-title">Educational Background</div>
+    <div class="edu-item">&bull; B.Sc &ndash; Computer Science &ndash; Model College of Science and Commerce, Mumbai University, India, Year 2015</div>
+    <div class="edu-item">&bull; 12th &ndash; Mathematics &ndash; UP State Board (UPMSP), Year 2012</div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="edu-item">&bull; C03 &ndash; AWS Certified Solutions Architect &ndash; Associate, Year 2024</div>
+    <div class="edu-item">&bull; MVP &ndash; Received award from C-Sharp Corner community for helping community, Year 2023</div>
+  </div>
+
+</div>
+
+</body>
+</html>
