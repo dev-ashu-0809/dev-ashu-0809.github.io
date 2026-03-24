@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FaAws, FaAngular, FaDatabase, FaBrain } from 'react-icons/fa'
+import { FaAws, FaAngular, FaBrain } from 'react-icons/fa'
 import { SiDotnet, SiGooglecloud, SiTerraform } from 'react-icons/si'
 
 const highlights = [
