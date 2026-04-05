@@ -20,8 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block mb-6 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium">
-            Tech Lead | 10+ Years in Healthcare Technology | Overland Park, KS
-          </div>
+            Tech Lead | 10+ Years in Healthcare Technology | Overland Park, KS, USA.          </div>
         </motion.div>
 
         <motion.h1
